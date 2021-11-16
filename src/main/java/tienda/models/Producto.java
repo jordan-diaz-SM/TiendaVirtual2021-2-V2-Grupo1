@@ -1,6 +1,6 @@
 package tienda.models;
 
-import tienda.models.interfaces.IFamilia;
+import tienda.models.interfaces.Familia;
 
 public class Producto {
     private String id;
@@ -9,7 +9,7 @@ public class Producto {
     private Double precioBase;
     private String lineaProducto;
     private String mantenimiento;
-    private IFamilia familia;
+    private Familia familia;
     private String camara;
     private String bateria;
 
@@ -24,11 +24,11 @@ public class Producto {
         this.bateria = duracion;
     }
 
-    public IFamilia getFamilia() {
+    public Familia getFamilia() {
         return familia;
     }
 
-    public void setFamilia(IFamilia familia) {
+    public void setFamilia(Familia familia) {
         this.familia = familia;
     }
 

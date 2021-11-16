@@ -1,11 +1,11 @@
 package tienda.models.impl;
 
 import tienda.models.interfaces.ICategoria;
-import tienda.models.interfaces.IFamilia;
+import tienda.models.interfaces.Familia;
 
-public class FamiliaLaptops implements IFamilia {
+public class FamiliaLaptops extends Familia {
     
-    protected ICategoria categoria;
+    //protected ICategoria categoria;
 
     public FamiliaLaptops() {}
 
