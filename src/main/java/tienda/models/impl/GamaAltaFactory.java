@@ -17,5 +17,16 @@ public class GamaAltaFactory implements IProductoFactory {
         return new MantenimientoPremium();
     }
 
+    @Override
+    public CamaraProducto getCamaraProducto(){
+
+        return new ResolucionAlta();
+    }
+
+    @Override
+    public BateriaProducto getBateriaProducto(){
+        
+        return new DuracionAlta();
+    }
     
 }

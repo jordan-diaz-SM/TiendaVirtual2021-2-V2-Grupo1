@@ -10,14 +10,18 @@ public class Producto {
     private String lineaProducto;
     private String mantenimiento;
     private IFamilia familia;
+    private String camara;
+    private String bateria;
 
-    public Producto(String codigo, String descripcion, Double precioBase, String linea, String mantenimiento)   {
+    public Producto(String codigo, String descripcion, Double precioBase, String linea, String mantenimiento, String resolucion, String duracion)   {
 
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.precioBase = precioBase;
         this.lineaProducto = linea;
         this.mantenimiento = mantenimiento;
+        this.camara = resolucion;
+        this.bateria = duracion;
     }
 
     public IFamilia getFamilia() {
@@ -79,5 +83,21 @@ public class Producto {
 
     public void setCodigo(String codigo) {
         this.codigo = codigo;
+    }
+
+    public String getCamara() {
+        return camara;
+    }
+
+    public void setCamara(String camara) {
+        this.camara = camara;
+    }
+
+    public String getBateria() {
+        return bateria;
+    }
+
+    public void setBateria(String bateria) {
+        this.bateria = bateria;
     }
 }
