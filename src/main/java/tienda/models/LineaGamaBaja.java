@@ -8,5 +8,4 @@ public class LineaGamaBaja extends LineaProducto {
         return "Gama Baja";
     }
     
-
 }

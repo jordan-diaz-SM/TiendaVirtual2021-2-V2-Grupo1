@@ -3,10 +3,12 @@ package tienda.controllers.impl;
 import tienda.config.Paths;
 import tienda.controllers.ProductController;
 import tienda.models.Producto;
+import tienda.models.impl.CategoriaJuegos;
 import tienda.models.impl.CategoriaTrabajo;
 import tienda.models.impl.FamiliaCelulares;
 import tienda.models.impl.GamaAltaFactory;
 import tienda.models.impl.GamaBajaFactory;
+import tienda.models.impl.GamaMediaFactory;
 import tienda.models.interfaces.IProductoFactory;
 import tienda.repositories.ProductoRepositorio;
 import io.javalin.http.Context;
@@ -91,7 +93,7 @@ public class ProductControllerImpl implements ProductController {
         String camaraGB = abstractFactory.getCamaraProducto().getResolucion();
         String bateriaGB = abstractFactory.getBateriaProducto().getDuracion();
 
-        Producto pr1 = new Producto( "P200201", "Nokia", 1400.00, lineaGB, mantenimientoGB, camaraGB, bateriaGB);
+        Producto pr1 = new Producto( "P200201", "Nokia 3.4", 649.00, lineaGB, mantenimientoGB, camaraGB, bateriaGB);
         pr1.setFamilia( new FamiliaCelulares() );
         productRepository.create(pr1);
 
@@ -101,9 +103,19 @@ public class ProductControllerImpl implements ProductController {
         String camaraGA = abstractFactory.getCamaraProducto().getResolucion();
         String bateriaGA = abstractFactory.getBateriaProducto().getDuracion();
 
-        Producto pr2 = new Producto( "P200202", "Iphone", 3400.00, lineaGA, mantenimientoGA, camaraGA, bateriaGA);
+        Producto pr2 = new Producto( "P200202", "Iphone 13", 5299.00, lineaGA, mantenimientoGA, camaraGA, bateriaGA);
         pr2.setFamilia( new FamiliaCelulares( new CategoriaTrabajo() ) );
         productRepository.create(pr2);
+
+        abstractFactory = new GamaMediaFactory();
+        String lineaGM = abstractFactory.getLineaProducto().getLinea();
+        String mantenimientoGM = abstractFactory.getMantenimiento().getPeriodo();
+        String camaraGM = abstractFactory.getCamaraProducto().getResolucion();
+        String bateriaGM = abstractFactory.getBateriaProducto().getDuracion();
+
+        Producto pr3 = new Producto("P200203", "Huawei P40 lite", 1199.00, lineaGM, mantenimientoGM, camaraGM, bateriaGM);
+        pr3.setFamilia(new FamiliaCelulares( new CategoriaJuegos() ));
+        productRepository.create(pr3);
 
     }
     
